@@ -65,6 +65,10 @@ const handleLoadMoreBtnClick = async () => {
   try {
     const { data } = await pixabyAPI.fetchPhotos();
 
+    if (pixabyAPI.page === data.totalHits) {
+      loadMoreBtnEl.classList.add('is-hidden');
+    }
+
     galleryListEl.insertAdjacentHTML(
       'beforeend',
       createGalleryCards(data.hits)
