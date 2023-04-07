@@ -22,7 +22,7 @@ export class PixabayAPI {
         },
       });
     } catch (error) {
-      throw new Error(error.massage);
+      throw new Error(response.massage);
     }
   }
 }
