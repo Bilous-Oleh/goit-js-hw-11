@@ -6,6 +6,7 @@ export class PixabayAPI {
 
   query = null;
   page = 1;
+  per_page = 40;
 
   async fetchPhotos() {
     try {
@@ -14,14 +15,14 @@ export class PixabayAPI {
           q: this.query,
           page: this.page,
           key: this.#API_KEY,
-          per_page: 40,
+          per_page: this.per_page,
           image_type: 'photo',
           orientation: 'horizontal',
           safesearch: 'true',
         },
       });
     } catch (error) {
-      throw new Error(response.massage);
+      throw new Error(error.massage);
     }
   }
 }

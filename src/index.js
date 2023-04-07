@@ -49,6 +49,7 @@ const handleSearchFormSubmit = async event => {
     lightBox.refresh();
 
     if (data.totalHits < pixabyAPI.per_page) {
+      Notify.info("We're sorry, but you've reached the end of search results.");
       return;
     }
 
