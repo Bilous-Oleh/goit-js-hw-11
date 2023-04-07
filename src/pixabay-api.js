@@ -6,7 +6,6 @@ export class PixabayAPI {
 
   query = null;
   page = 1;
-  per_page = 40;
 
   async fetchPhotos() {
     try {
@@ -15,7 +14,7 @@ export class PixabayAPI {
           q: this.query,
           page: this.page,
           key: this.#API_KEY,
-          per_page: this.per_page,
+          per_page: 40,
           image_type: 'photo',
           orientation: 'horizontal',
           safesearch: 'true',
