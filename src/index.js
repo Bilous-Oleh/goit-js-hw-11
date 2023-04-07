@@ -21,6 +21,7 @@ const lightBox = new SimpleLightbox('.gallery a', {
 const handleSearchFormSubmit = async event => {
   event.preventDefault();
 
+  pixabyAPI.page = 1;
   pixabyAPI.query = event.currentTarget.elements.searchQuery.value.trim();
   searchInputEl.value = '';
   galleryListEl.innerHTML = '';
@@ -46,7 +47,6 @@ const handleSearchFormSubmit = async event => {
     galleryListEl.innerHTML = createGalleryCards(data.hits);
 
     lightBox.refresh();
-    smoothScroll();
 
     if (data.totalHits < pixabyAPI.per_page) {
       return;

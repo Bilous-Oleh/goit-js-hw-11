@@ -15,6 +15,7 @@ export class PixabayAPI {
           q: this.query,
           page: this.page,
           key: this.#API_KEY,
+          per_page: this.per_page,
           image_type: 'photo',
           orientation: 'horizontal',
           safesearch: 'true',
